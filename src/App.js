@@ -1,44 +1,18 @@
-import React from 'react';
-
-
+import { useState } from 'react';
 import './App.css';
 
-
-
 function App() {
-  // const[count,setCount] =useState(0)
-  // function contNumDe(){
-  //   setCount(c => c-1)
-  // }
-  // function contNumIn(){
-  //   setCount((i) => i + 1); 
-  // }
+  const[inputValue,setInputValue] = useState("");
 
-  // return (
-  //   <div className='btn'>
-  //     <button onClick={contNumDe}>-</button>
-  //     <span>{count}</span>
-  //     <button onClick={contNumIn}>+</button>
-  //   </div>
-  // );
-
-  const Students = [
-    { name: "mari", isGirl: true },
-    { name: "mo", isGirl: false },
-    { name: "eli", isGirl: true },
-    { name: "Ali", isGirl: false },
-    { name: "maf", isGirl: false },
-    { name: "hani", isGirl: true },
-    { name: "sara", isGirl: true },
-    { name: "hadi", isGirl: false },
-  ];
-
+  const ClickInput = (event) => {
+   setInputValue(event.target.value);
+  };
   return(
-<div>
-{Students.map(
-(S ) => !S.isGirl &&  <h1>{S.name}</h1>
-)}
-</div>
+    <div> 
+      <input type="text" onChange={ClickInput} />
+      {inputValue}
+    </div>
   );
+
 }
 export default App;
