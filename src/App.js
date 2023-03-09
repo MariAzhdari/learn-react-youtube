@@ -36,7 +36,7 @@ function App() {
   return(
 <div>
 {Students.map(
-(S ,k ) => S.isGirl &&  <h1>{S.name}</h1>
+(S ) => !S.isGirl &&  <h1>{S.name}</h1>
 )}
 </div>
   );
