@@ -2,15 +2,15 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const[show,setShow] = useState(true);
+  const[change,setChange] = useState("blue");
   
   const showHandler=()=>{
-    setShow(!show)
+   setChange(change === "blue" ? "red" : "blue")
   }
 return (
   <div style={{ textAlign: "center" }}>
     <button onClick={showHandler}>show/hide</button>
-    { show ===true && <h1>Hi my name is Mari</h1>}
+     <h1 style={{color:change}}> Hi my name is Mari</h1>
   </div>
 );
 }
